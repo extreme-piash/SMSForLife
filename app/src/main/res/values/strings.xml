@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">SMS For Life</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="smsArray">
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+        <item>Bangla SMS </item>
+        <item>English Sms</item>
+
+    </string-array>
+</resources>
