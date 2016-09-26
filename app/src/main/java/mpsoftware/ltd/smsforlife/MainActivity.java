@@ -1,28 +1,33 @@
 package mpsoftware.ltd.smsforlife;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+import mpsoftware.ltd.smsforlife.Adapter.TabViewPagerAdapter;
+
 public class MainActivity extends AppCompatActivity {
+
+    private ViewPager mViewPager;
+    private TabLayout mTabLayout;
+    private TabViewPagerAdapter mTabAdapter;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<String> mStringList;
     private SmsAdapter mSmsAdapter;
 
+    FragmentPagerAdapter adapterViewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,26 +35,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mRecyclerView = (RecyclerView)findViewById(R.id.recyclerviewSms);
-
-        mStringList = new ArrayList<>();
-        mRecyclerView.hasFixedSize();
-        mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        /*for (int i = 0; i <20 ; i++) {
-            mStringList.add("Mehedi Hassan");
-        }*/
-
-        Resources res = getResources();
-        mStringList = Arrays.asList(res.getStringArray(R.array.smsArray));
-
-        mSmsAdapter = new SmsAdapter(getApplicationContext(), mStringList);
-        mRecyclerView.setAdapter(mSmsAdapter);
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mTabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
 
 
-
-
+        mTabAdapter = new TabViewPagerAdapter(getFragmentManager(),getApplicationContext());
+        mViewPager.setAdapter(mTabAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -85,4 +77,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

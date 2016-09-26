@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="mpsoftware.ltd.smsforlife.MainActivity"
     tools:showIn="@layout/activity_main">
 
-   <android.support.v7.widget.RecyclerView
+   <android.support.design.widget.TabLayout
+       android:id="@+id/sliding_tabs"
+       android:layout_width="match_parent"
+       android:background="#e0ff5722"
+       android:layout_height="35dp"
+       app:tabTextColor="#eeee"
+       app:tabSelectedTextColor="#000000"
+       app:tabIndicatorColor="@color/colorAccent"
+       app:layout_collapseMode="pin" />
+
+   <android.support.v4.view.ViewPager
+       android:id="@+id/viewpager"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:background="@android:color/white" />
+
+   <!-- <android.support.v7.widget.RecyclerView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:scrollbars="vertical"
        android:id="@+id/recyclerviewSms">
-   </android.support.v7.widget.RecyclerView>
-</RelativeLayout>
+   </android.support.v7.widget.RecyclerView>-->
+</LinearLayout>
