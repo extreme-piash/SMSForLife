@@ -2,31 +2,30 @@
     <string name="app_name">SMS For Life</string>
     <string name="action_settings">Settings</string>
 
-    <string-array name="smsArray">
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
-        <item>Bangla SMS </item>
-        <item>English Sms</item>
+    <string-array name="BanglaSMSList">
+        <item> ঈদ  মোবারক</item>
+        <item> উপদেশ</item>
+        <item> কবিতা </item>
+        <item>  কষ্ট </item>
+        <item>  ক্ষমা  প্রার্থানা </item>
+        <item>  জন্মদিন  </item>
+        <item>  দীপাবলী </item>
+        <item>  দূর্গাপূজা  </item>
+        <item>  পরিবার </item>
+        <item>  বাংলা  নববর্ষ  </item>
+        <item> বানী</item>
+        <item>  বাবা  দিবস</item>
+        <item>  বিচ্ছেদ</item>
+        <item> বিবাহ  বার্ষিকী</item>
+        <item>  বিবিধ</item>
+        <item>  বোকা  বানানো </item>
+        <item>  বন্ধুত্ব </item>
+        <item>  বৃষ্টির  দিন </item>
+        <item>  ভালবাসা </item>
+        <item>  ভ্যালেন্টাইন - ডে </item>
+        <item> মা-দিবস </item>
+        <item>  মা- বাবা</item>
+        <item> মোসুমি </item>
 
     </string-array>
 

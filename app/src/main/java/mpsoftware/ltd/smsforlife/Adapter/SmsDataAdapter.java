@@ -1,6 +1,7 @@
-package mpsoftware.ltd.smsforlife;
+package mpsoftware.ltd.smsforlife.Adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,27 +10,41 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import mpsoftware.ltd.smsforlife.R;
+
 /**
  * Created by piash on 9/22/16.
  */
 
-public class SmsAdapter extends RecyclerView.Adapter<SmsAdapter.ViewHolder> {
+public class SmsDataAdapter extends RecyclerView.Adapter<SmsDataAdapter.ViewHolder> {
 
     private Context mContext;
     private List<String> mStringList;
+    private RVClickListener mRVClickListener;
 
-    public SmsAdapter(Context context, List<String> stringList) {
+    public SmsDataAdapter(Context context, List<String> stringList) {
         this.mContext = context;
         this.mStringList = stringList;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textViewSMS;
         public ViewHolder(View itemView) {
             super(itemView);
 
             textViewSMS = (TextView)itemView.findViewById(R.id.textViewSMS);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+
+            mRVClickListener.onItemClick(getAdapterPosition(), v);
+        }
+    }
+
+    public void setOnItemClickListener(RVClickListener mRVClickListener) {
+        this.mRVClickListener = mRVClickListener;
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,8 +56,10 @@ public class SmsAdapter extends RecyclerView.Adapter<SmsAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
+        Typeface type = Typeface.createFromAsset(mContext.getAssets(),"SolaimanLipi.ttf");
         holder.textViewSMS.setText(mStringList.get(position));
+        holder.textViewSMS.setTypeface(type);
+
     }
 
     @Override
@@ -50,5 +67,8 @@ public class SmsAdapter extends RecyclerView.Adapter<SmsAdapter.ViewHolder> {
         return mStringList.size();
     }
 
+    public interface RVClickListener {
+        public void onItemClick(int position, View v);
+    }
 
 }

@@ -44,14 +44,14 @@ public class TabViewPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         // Generate title based on item position
-        /*switch (position) {
+        switch (position) {
             case 0:
-                return "Home";
+                return " বাংলা";
             case 1:
-                return "Crazy";
+                return "English";
         }
-        return null;*/
+        return null;
 
-        return tabTitles[position];
+
     }
 }

@@ -1,5 +1,7 @@
 package mpsoftware.ltd.smsforlife;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,20 +16,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import java.util.List;
 
+import mpsoftware.ltd.smsforlife.Adapter.SmsDataAdapter;
 import mpsoftware.ltd.smsforlife.Adapter.TabViewPagerAdapter;
+import mpsoftware.ltd.smsforlife.Fragment.MainContentFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ViewPager mViewPager;
-    private TabLayout mTabLayout;
-    private TabViewPagerAdapter mTabAdapter;
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private List<String> mStringList;
-    private SmsAdapter mSmsAdapter;
 
-    FragmentPagerAdapter adapterViewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +31,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mViewPager = (ViewPager) findViewById(R.id.viewpager);
-        mTabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
 
-
-        mTabAdapter = new TabViewPagerAdapter(getFragmentManager(),getApplicationContext());
-        mViewPager.setAdapter(mTabAdapter);
-        mTabLayout.setupWithViewPager(mViewPager);
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.content_main, new MainContentFragment());
+        fragmentTransaction.commit();
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
