@@ -5,5 +5,8 @@
     android:orientation="vertical"
     tools:context="mpsoftware.ltd.smsforlife.Fragment.EnglishSMSFragment">
 
-
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recylerViewEnglish"></android.support.v7.widget.RecyclerView>
 </LinearLayout>

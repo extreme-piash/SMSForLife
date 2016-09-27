@@ -61,7 +61,7 @@ public class BanglaSMSFragment extends Fragment {
 
                 //getFragmentManager().beginTransaction().replace(R.id.content_main, new BanglaSubFragment()).addToBackStack(null).commit();
                 Fragment fragment = new BanglaSubFragment();
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.content_main, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();

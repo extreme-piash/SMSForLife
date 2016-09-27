@@ -15,7 +15,6 @@ import mpsoftware.ltd.smsforlife.Fragment.EnglishSMSFragment;
 public class TabViewPagerAdapter extends FragmentStatePagerAdapter {
 
     final int PAGE_COUNT = 2;
-    private String tabTitles[] = new String[] { " বাংলা", "English" };
     private Context context;
 
     public TabViewPagerAdapter(FragmentManager fm, Context context) {
@@ -25,7 +24,7 @@ public class TabViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return tabTitles.length;
+        return 2;
     }
 
     @Override

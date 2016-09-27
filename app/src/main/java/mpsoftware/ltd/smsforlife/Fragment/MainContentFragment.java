@@ -2,7 +2,9 @@ package mpsoftware.ltd.smsforlife.Fragment;
 
 
 import android.app.Fragment;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 
 import android.support.v4.view.ViewPager;
@@ -27,6 +29,7 @@ public class MainContentFragment extends Fragment {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,9 +38,7 @@ public class MainContentFragment extends Fragment {
 
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
         mTabLayout = (TabLayout) view.findViewById(R.id.sliding_tabs);
-
-
-        mTabAdapter = new TabViewPagerAdapter(getFragmentManager(),getActivity());
+        mTabAdapter = new TabViewPagerAdapter(getChildFragmentManager(),getActivity());
         mViewPager.setAdapter(mTabAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
 
