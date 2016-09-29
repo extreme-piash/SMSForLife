@@ -44,7 +44,7 @@ public class EnglishSMSFragment extends Fragment {
 
         mLayoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerViewBangla.setLayoutManager(mLayoutManager);
-        mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSList));
+        mStringList = Arrays.asList(getResources().getStringArray(R.array.EnglishSMSList));
         mSmsAdapter = new SmsDataAdapter(getActivity(), mStringList);
         mRecyclerViewBangla.setAdapter(mSmsAdapter);
 
@@ -53,7 +53,7 @@ public class EnglishSMSFragment extends Fragment {
             public void onItemClick(int position, View v) {
 
                 //getFragmentManager().beginTransaction().replace(R.id.content_main, new BanglaSubFragment()).addToBackStack(null).commit();
-                Fragment fragment = new EnglishSMSFragment();
+                Fragment fragment = new EnglishSubFragment();
                 FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.content_main, fragment);
                 fragmentTransaction.addToBackStack(null);

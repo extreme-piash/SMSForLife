@@ -1,8 +1,8 @@
 package mpsoftware.ltd.smsforlife.Fragment;
 
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,7 +20,7 @@ import mpsoftware.ltd.smsforlife.R;
  */
 public class EnglishSubFragment extends Fragment {
 
-    private RecyclerView mRecyclerViewBanglaSub;
+    private RecyclerView mRecyclerViewEnglishSub;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<String> mStringList;
     private SmsDataAdapter mSmsAdapter;
@@ -35,13 +35,13 @@ public class EnglishSubFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_english_sub, container, false);
 
-        mRecyclerViewBanglaSub = (RecyclerView)view.findViewById(R.id.recylerViewEnglishSub);
+        mRecyclerViewEnglishSub = (RecyclerView)view.findViewById(R.id.recylerViewEnglishSub);
 
         mLayoutManager = new GridLayoutManager(getActivity(), 1);
-        mRecyclerViewBanglaSub.setLayoutManager(mLayoutManager);
-        mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSList));
+        mRecyclerViewEnglishSub.setLayoutManager(mLayoutManager);
+        mStringList = Arrays.asList(getResources().getStringArray(R.array.EnglishSMSList));
         mSmsAdapter = new SmsDataAdapter(getActivity(), mStringList);
-        mRecyclerViewBanglaSub.setAdapter(mSmsAdapter);
+        mRecyclerViewEnglishSub.setAdapter(mSmsAdapter);
         return view;
     }
 

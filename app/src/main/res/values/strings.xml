@@ -29,6 +29,43 @@
 
     </string-array>
 
+    <string-array name="EnglishSMSList">
+        <item>Angry</item>
+        <item>Anniversary</item>
+        <item>April Fool</item>
+        <item>ASCII SMS</item>
+        <item>Attitude</item>
+        <item>Bible</item>
+        <item>Birthday</item>
+        <item>Boss Birthday</item>
+        <item>Boy VS Girl</item>
+        <item>Boyfriend Birthday</item>
+        <item>Boyfriend Love</item>
+        <item>Breakup SMS</item>
+        <item>Broken Heart</item>
+        <item>Brother SMS</item>
+        <item>Caring SMS</item>
+        <item>Children\'s Day</item>
+        <item>Christian Birthday</item>
+        <item>Chrismas</item>
+        <item>Columbus day</item>
+        <item>Condolence</item>
+        <item>Cool</item>
+        <item>Dad Birthday</item>
+        <item>Daughter Birthday</item>
+        <item>Dirty</item>
+        <item>Diwali</item>
+        <item>Easter</item>
+        <item>Eid</item>
+        <item>Emotional</item>
+        <item>Engagement</item>
+        <item>Exan</item>
+        <item>Farewell</item>
+        <item>Father\'s Day</item>
+        <item>Festival</item>
+        <item>Llirt</item>
+        <item>Friday</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
