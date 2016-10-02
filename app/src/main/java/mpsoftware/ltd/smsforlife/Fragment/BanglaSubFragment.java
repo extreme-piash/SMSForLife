@@ -2,12 +2,15 @@ package mpsoftware.ltd.smsforlife.Fragment;
 
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -39,9 +42,32 @@ public class BanglaSubFragment extends Fragment {
 
         mLayoutManager = new GridLayoutManager(getActivity(), 1);
         mRecyclerViewBanglaSub.setLayoutManager(mLayoutManager);
-        mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSList));
+        mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok));
         mSmsAdapter = new SmsDataAdapter(getActivity(), mStringList);
         mRecyclerViewBanglaSub.setAdapter(mSmsAdapter);
+
+        mSmsAdapter.setOnItemClickListener(new SmsDataAdapter.RVClickListener() {
+            @Override
+            public void onItemClick(int position, View v) {
+
+                Bundle bundleSMS = new Bundle();
+                bundleSMS.putString("fullSMS", mStringList.get(position));
+
+                Fragment fragment = new FullSMSFragment();
+                fragment.setArguments(bundleSMS);
+                FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.content_main, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+               /* String shareBody = mStringList.get(position);
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(sharingIntent, "Share using"));*/
+            }
+        });
     return view;
     }
 
