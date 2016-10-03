@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class BanglaSubFragment extends Fragment {
 
     private RecyclerView mRecyclerViewBanglaSub;
     private RecyclerView.LayoutManager mLayoutManager;
-    private List<String> mStringList;
+    private ArrayList<String> mStringList;
     private SmsDataAdapter mSmsAdapter;
 
     public BanglaSubFragment() {
@@ -52,6 +53,8 @@ public class BanglaSubFragment extends Fragment {
 
                 Bundle bundleSMS = new Bundle();
                 bundleSMS.putString("fullSMS", mStringList.get(position));
+                bundleSMS.putStringArrayList("smsArray",  mStringList);
+                bundleSMS.putInt("smsPosition", position);
 
                 Fragment fragment = new FullSMSFragment();
                 fragment.setArguments(bundleSMS);
@@ -76,17 +79,16 @@ public class BanglaSubFragment extends Fragment {
         Bundle bundleSMSPositon = new Bundle();
         bundleSMSPositon = getArguments();
         int position = bundleSMSPositon.getInt("position");
-        Log.e("position", "setStringArrayByPosition: "+position );
         switch (position){
             case 0:
-                mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok));
+                mStringList =new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok)));
                 break;
 
             case 1:
-                mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSAdvice));
+                new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSAdvice)));
                 break;
             default:
-                mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok));
+                new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok)));
                 break;
 
         }

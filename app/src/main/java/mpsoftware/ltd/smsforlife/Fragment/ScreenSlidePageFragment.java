@@ -40,7 +40,6 @@ public class ScreenSlidePageFragment extends Fragment {
         super.onCreate(savedInstanceState);
         mPage = getArguments().getInt("pagenumber", 0);
         mFullSmS = getArguments().getString("fullsms");
-        Log.e("Sms", "newInstance: "+mFullSmS );
     }
 
     @Override
