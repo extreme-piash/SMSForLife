@@ -67,7 +67,6 @@ public class BanglaSMSFragment extends Fragment {
 
                 Bundle bundleSMSTopic = new Bundle();
                 bundleSMSTopic.putInt("position",position);
-                //getFragmentManager().beginTransaction().replace(R.id.content_main, new BanglaSubFragment()).addToBackStack(null).commit();
                 Fragment fragment = new BanglaSubFragment();
                 fragment.setArguments(bundleSMSTopic);
                 FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
