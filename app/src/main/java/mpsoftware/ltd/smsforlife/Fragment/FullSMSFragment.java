@@ -4,6 +4,7 @@ package mpsoftware.ltd.smsforlife.Fragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mpsoftware.ltd.smsforlife.Adapter.FullSMSViewPagerAdapter;
+import mpsoftware.ltd.smsforlife.MainActivity;
 import mpsoftware.ltd.smsforlife.R;
 
 /**
@@ -42,6 +44,10 @@ public class FullSMSFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_full_sms, container, false);
         mPager = (ViewPager)view.findViewById(R.id.viewpagerFullSMS);
+        FloatingActionButton floatingActionButton = ((MainActivity) getActivity()).getFloatingActionButton();
+        if (floatingActionButton != null) {
+            floatingActionButton.hide();
+        }
         mStringArray = new ArrayList<>();
         mBundleSMS = new Bundle();
         mBundleSMS = getArguments();

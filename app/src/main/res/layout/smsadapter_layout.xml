@@ -17,7 +17,7 @@
          android:id="@+id/textViewSMS"
          android:gravity="center"
             android:textColor="#eeee"
-         android:textSize="22sp"
+            android:textSize="22sp"
             android:ellipsize="end"
             android:maxLines="3"/>
     </android.support.v7.widget.CardView>

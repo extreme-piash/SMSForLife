@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -18,6 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import mpsoftware.ltd.smsforlife.Adapter.SmsDataAdapter;
+import mpsoftware.ltd.smsforlife.MainActivity;
 import mpsoftware.ltd.smsforlife.R;
 
 
@@ -48,6 +50,10 @@ public class BanglaSMSFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         mRecyclerViewBangla = (RecyclerView)view.findViewById(R.id.recylerViewBangla);
+        FloatingActionButton floatingActionButton = ((MainActivity) getActivity()).getFloatingActionButton();
+        if (floatingActionButton != null) {
+            floatingActionButton.show();
+        }
 
         mLayoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerViewBangla.setLayoutManager(mLayoutManager);
