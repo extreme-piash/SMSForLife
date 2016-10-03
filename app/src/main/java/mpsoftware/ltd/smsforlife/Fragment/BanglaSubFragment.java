@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,11 +39,10 @@ public class BanglaSubFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_bangla_sub, container, false);
+        setStringArrayByPosition();
         mRecyclerViewBanglaSub = (RecyclerView)view.findViewById(R.id.recylerViewBanglaSub);
-
         mLayoutManager = new GridLayoutManager(getActivity(), 1);
         mRecyclerViewBanglaSub.setLayoutManager(mLayoutManager);
-        mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok));
         mSmsAdapter = new SmsDataAdapter(getActivity(), mStringList);
         mRecyclerViewBanglaSub.setAdapter(mSmsAdapter);
 
@@ -71,4 +71,24 @@ public class BanglaSubFragment extends Fragment {
     return view;
     }
 
+
+    public void setStringArrayByPosition(){
+        Bundle bundleSMSPositon = new Bundle();
+        bundleSMSPositon = getArguments();
+        int position = bundleSMSPositon.getInt("position");
+        Log.e("position", "setStringArrayByPosition: "+position );
+        switch (position){
+            case 0:
+                mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok));
+                break;
+
+            case 1:
+                mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSAdvice));
+                break;
+            default:
+                mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok));
+                break;
+
+        }
+    }
 }
