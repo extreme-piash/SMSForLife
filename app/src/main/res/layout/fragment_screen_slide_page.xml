@@ -5,18 +5,18 @@
     android:orientation="vertical"
     tools:context="mpsoftware.ltd.smsforlife.Fragment.ScreenSlidePageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pagerNumber" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:textSize="22sp"
         android:textColor="#eee"
-        android:id="@+id/FullSMS"/>
+        android:id="@+id/FullSMS" />
 
 
 </LinearLayout>

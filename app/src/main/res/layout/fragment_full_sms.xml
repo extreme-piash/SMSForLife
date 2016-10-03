@@ -4,13 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="mpsoftware.ltd.smsforlife.Fragment.FullSMSFragment">
-    <!--<TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/textViewFullSMS"
-        android:gravity="center"
-        android:textColor="#eeee"
-        android:textSize="22sp"/>-->
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpagerFullSMS"
