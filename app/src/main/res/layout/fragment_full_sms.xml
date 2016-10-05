@@ -24,6 +24,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="35dp"
+            android:id="@+id/sendSMS"
             android:src="@drawable/send"
             android:gravity="center"
             android:layout_weight="1"/>

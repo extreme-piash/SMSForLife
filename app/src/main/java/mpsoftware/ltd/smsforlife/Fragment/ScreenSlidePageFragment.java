@@ -16,19 +16,22 @@ import mpsoftware.ltd.smsforlife.R;
  */
 public class ScreenSlidePageFragment extends Fragment {
 
-    TextView mTextFullSMS;
-    TextView mTextPageNumber;
+    private TextView mTextFullSMS;
+    private TextView mTextPageNumber;
+    private TextView mTexViewTotalPage;
     private String mFullSmS;
     private int mPage;
+    private int mTotalCount;
     public ScreenSlidePageFragment() {
         // Required empty public constructor
     }
 
-    public static ScreenSlidePageFragment newInstance(int page, String FullSmS) {
+    public static ScreenSlidePageFragment newInstance(int page,int totalCount, String FullSmS) {
         
         Bundle args = new Bundle();
         args.putInt("pagenumber", page);
         args.putString("fullsms", FullSmS);
+        args.putInt("totalCount", totalCount);
 
         
         ScreenSlidePageFragment fragment = new ScreenSlidePageFragment();
@@ -40,6 +43,7 @@ public class ScreenSlidePageFragment extends Fragment {
         super.onCreate(savedInstanceState);
         mPage = getArguments().getInt("pagenumber", 0);
         mFullSmS = getArguments().getString("fullsms");
+        mTotalCount = getArguments().getInt("totalCount");
     }
 
     @Override
@@ -49,8 +53,10 @@ public class ScreenSlidePageFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_screen_slide_page, container, false);
          mTextFullSMS = (TextView)view.findViewById(R.id.FullSMS);
          mTextPageNumber = (TextView)view.findViewById(R.id.pagerNumber);
+         mTexViewTotalPage = (TextView)view.findViewById(R.id.totalPage);
          mTextFullSMS.setText(mFullSmS);
-         mTextPageNumber.setText(String.valueOf(mPage));
+         mTexViewTotalPage.setText(String.valueOf(mTotalCount));
+         mTextPageNumber.setText(String.valueOf(mPage+1));
 
         return view;
     }

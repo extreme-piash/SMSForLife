@@ -3,6 +3,8 @@ package mpsoftware.ltd.smsforlife.Fragment;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v13.app.FragmentStatePagerAdapter;
@@ -36,6 +38,7 @@ public class FullSMSFragment extends Fragment {
     private int mCurrentPage;
     private ImageView mImageViewForward;
     private ImageView mImageViewBackward;
+    private ImageView mImageViewSend;
 
     public FullSMSFragment() {
         // Required empty public constructor
@@ -50,6 +53,7 @@ public class FullSMSFragment extends Fragment {
         mPager = (ViewPager)view.findViewById(R.id.viewpagerFullSMS);
         mImageViewForward = (ImageView)view.findViewById(R.id.forwardButton);
         mImageViewBackward = (ImageView)view.findViewById(R.id.backwardButton);
+        mImageViewSend = (ImageView)view.findViewById(R.id.sendSMS);
         FloatingActionButton floatingActionButton = ((MainActivity) getActivity()).getFloatingActionButton();
         if (floatingActionButton != null) {
             floatingActionButton.hide();
@@ -60,9 +64,18 @@ public class FullSMSFragment extends Fragment {
         mStringArray = mBundleSMS.getStringArrayList("smsArray");
         mCurrentPage = mBundleSMS.getInt("smsPosition");
 
-        mPagerAdapter = new FullSMSViewPagerAdapter(getFragmentManager(), mStringArray, getActivity());
+        mBundleSMS.putInt("totalCount", mStringArray.size());
+
+        mPagerAdapter = new FullSMSViewPagerAdapter(getFragmentManager(), mStringArray, mStringArray.size(), getActivity());
         mPager.setAdapter(mPagerAdapter);
         mPager.setCurrentItem(mCurrentPage);
+
+        SendBFButton();
+
+        return view;
+    }
+
+    public void SendBFButton(){
         mImageViewForward.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -93,7 +106,20 @@ public class FullSMSFragment extends Fragment {
                 }
         );
 
-        return view;
+        mImageViewSend.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String shareBody = mStringArray.get(mPager.getCurrentItem());
+                        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                        sharingIntent.setType("text/plain");
+                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                        startActivity(Intent.createChooser(sharingIntent, "Share using"));
+                    }
+                }
+        );
+
     }
 
 }

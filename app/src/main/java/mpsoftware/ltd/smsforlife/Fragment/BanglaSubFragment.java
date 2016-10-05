@@ -85,12 +85,10 @@ public class BanglaSubFragment extends Fragment {
         Bundle bundleSMSPositon = new Bundle();
         bundleSMSPositon = getArguments();
         int position = bundleSMSPositon.getInt("position");
-        Log.e("Tag", "setStringArrayByPosition: "+position );
         switch (position){
             case 0:
                 mStringList =new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok)));
                 break;
-
             case 1:
                 mStringList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSAdvice)));
                 break;
