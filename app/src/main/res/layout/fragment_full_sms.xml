@@ -17,6 +17,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="35dp"
+            android:id="@+id/backwardButton"
             android:gravity="left"
             android:src="@drawable/backward"
             android:layout_weight="1"/>
@@ -29,6 +30,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="35dp"
+            android:id="@+id/forwardButton"
             android:gravity="right"
             android:src="@drawable/forward"
             android:layout_weight="1"/>

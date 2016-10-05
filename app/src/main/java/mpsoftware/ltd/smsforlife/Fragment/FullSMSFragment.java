@@ -12,7 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +34,8 @@ public class FullSMSFragment extends Fragment {
     private Bundle mBundleSMS;
     private List<String> mStringArray;
     private int mCurrentPage;
+    private ImageView mImageViewForward;
+    private ImageView mImageViewBackward;
 
     public FullSMSFragment() {
         // Required empty public constructor
@@ -44,6 +48,8 @@ public class FullSMSFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_full_sms, container, false);
         mPager = (ViewPager)view.findViewById(R.id.viewpagerFullSMS);
+        mImageViewForward = (ImageView)view.findViewById(R.id.forwardButton);
+        mImageViewBackward = (ImageView)view.findViewById(R.id.backwardButton);
         FloatingActionButton floatingActionButton = ((MainActivity) getActivity()).getFloatingActionButton();
         if (floatingActionButton != null) {
             floatingActionButton.hide();
@@ -57,6 +63,35 @@ public class FullSMSFragment extends Fragment {
         mPagerAdapter = new FullSMSViewPagerAdapter(getFragmentManager(), mStringArray, getActivity());
         mPager.setAdapter(mPagerAdapter);
         mPager.setCurrentItem(mCurrentPage);
+        mImageViewForward.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
+                        if (  mCurrentPage < mPager.getAdapter().getCount()-1){
+
+                            mPager.setCurrentItem(++mCurrentPage);
+                        }
+
+
+
+                    }
+                }
+        );
+
+        mImageViewBackward.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        if ( mCurrentPage!= 0){
+
+                            mPager.setCurrentItem(--mCurrentPage);
+                        }
+                    }
+                }
+        );
 
         return view;
     }
