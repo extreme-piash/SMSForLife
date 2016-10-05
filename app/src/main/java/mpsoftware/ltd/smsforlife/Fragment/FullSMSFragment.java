@@ -65,8 +65,6 @@ public class FullSMSFragment extends Fragment {
         mStringArray = mBundleSMS.getStringArrayList("smsArray");
         mCurrentPage = mBundleSMS.getInt("smsPosition");
 
-        mBundleSMS.putInt("totalCount", mStringArray.size());
-
         mPagerAdapter = new FullSMSViewPagerAdapter(getFragmentManager(), mStringArray, mStringArray.size(), getActivity());
         mPager.setAdapter(mPagerAdapter);
         mPager.setCurrentItem(mCurrentPage);
