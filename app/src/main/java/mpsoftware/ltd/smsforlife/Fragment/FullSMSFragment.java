@@ -39,6 +39,7 @@ public class FullSMSFragment extends Fragment {
     private ImageView mImageViewForward;
     private ImageView mImageViewBackward;
     private ImageView mImageViewSend;
+    private int mCurrentViewPager;
 
     public FullSMSFragment() {
         // Required empty public constructor
@@ -81,14 +82,8 @@ public class FullSMSFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
 
-
-                        if (  mCurrentPage < mPager.getAdapter().getCount()-1){
-
-                            mPager.setCurrentItem(++mCurrentPage);
-                        }
-
-
-
+                        mCurrentPage = mPager.getCurrentItem();
+                        mPager.setCurrentItem(++mCurrentPage);
                     }
                 }
         );
@@ -97,11 +92,8 @@ public class FullSMSFragment extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
-                        if ( mCurrentPage!= 0){
-
-                            mPager.setCurrentItem(--mCurrentPage);
-                        }
+                        mCurrentPage = mPager.getCurrentItem();
+                        mPager.setCurrentItem(--mCurrentPage);
                     }
                 }
         );
