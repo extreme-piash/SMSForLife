@@ -52,8 +52,10 @@ public class EnglishSMSFragment extends Fragment {
             @Override
             public void onItemClick(int position, View v) {
 
-                //getFragmentManager().beginTransaction().replace(R.id.content_main, new BanglaSubFragment()).addToBackStack(null).commit();
+                Bundle bundleSMSTopic = new Bundle();
+                bundleSMSTopic.putInt("position",position);
                 Fragment fragment = new EnglishSubFragment();
+                fragment.setArguments(bundleSMSTopic);
                 FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.content_main, fragment);
                 fragmentTransaction.addToBackStack(null);
