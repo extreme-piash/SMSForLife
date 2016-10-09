@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import mpsoftware.ltd.smsforlife.AnimationUtils;
 import mpsoftware.ltd.smsforlife.R;
 
 /**
@@ -21,6 +22,7 @@ public class SmsDataAdapter extends RecyclerView.Adapter<SmsDataAdapter.ViewHold
     private Context mContext;
     private List<String> mStringList;
     private RVClickListener mRVClickListener;
+    private int mPreviousPosition = 0;
 
     public SmsDataAdapter(Context context, List<String> stringList) {
         this.mContext = context;
@@ -59,6 +61,18 @@ public class SmsDataAdapter extends RecyclerView.Adapter<SmsDataAdapter.ViewHold
         Typeface type = Typeface.createFromAsset(mContext.getAssets(),"SolaimanLipi.ttf");
         holder.textViewSMS.setText(mStringList.get(position));
         holder.textViewSMS.setTypeface(type);
+
+        if (position > mPreviousPosition) {
+            AnimationUtils.animateSunblind(holder, true);
+//            AnimationUtils.animateSunblind(holder, true);
+//            AnimationUtils.animate1(holder, true);
+//            AnimationUtils.animate(holder,true);
+        } else {
+            AnimationUtils.animateSunblind(holder, false);
+//            AnimationUtils.animateSunblind(holder, false);
+//            AnimationUtils.animate1(holder, false);
+//            AnimationUtils.animate(holder, false);
+        }
 
     }
 

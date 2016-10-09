@@ -18,6 +18,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
+import jp.wasabeef.recyclerview.animators.FlipInTopXAnimator;
 import mpsoftware.ltd.smsforlife.Adapter.SmsDataAdapter;
 import mpsoftware.ltd.smsforlife.MainActivity;
 import mpsoftware.ltd.smsforlife.R;
@@ -55,10 +56,14 @@ public class BanglaSMSFragment extends Fragment {
             floatingActionButton.show();
         }
 
+        FlipInTopXAnimator animator = new FlipInTopXAnimator();
+        animator.setAddDuration(2000);
+        animator.setRemoveDuration(2000);
         mLayoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerViewBangla.setLayoutManager(mLayoutManager);
         mStringList = Arrays.asList(getResources().getStringArray(R.array.BanglaSMSList));
         mSmsAdapter = new SmsDataAdapter(getActivity(), mStringList);
+        mRecyclerViewBangla.setItemAnimator(animator);
         mRecyclerViewBangla.setAdapter(mSmsAdapter);
 
         mSmsAdapter.setOnItemClickListener(new SmsDataAdapter.RVClickListener() {
