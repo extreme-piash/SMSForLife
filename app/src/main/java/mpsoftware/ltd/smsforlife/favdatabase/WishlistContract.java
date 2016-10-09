@@ -1,8 +1,10 @@
-package mpsoftware.ltd.smsforlife.database;
+package mpsoftware.ltd.smsforlife.favdatabase;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
+
+import mpsoftware.ltd.smsforlife.favdatabase.DatabaseHelper;
 
 public class WishlistContract extends DatabaseHelper {
 

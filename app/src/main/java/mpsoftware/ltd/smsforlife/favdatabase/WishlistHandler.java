@@ -1,4 +1,4 @@
-package mpsoftware.ltd.smsforlife.database;
+package mpsoftware.ltd.smsforlife.favdatabase;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+import mpsoftware.ltd.smsforlife.favdatabase.WishlistContract;
 
 /**
  * Created by piash on 8/10/16.

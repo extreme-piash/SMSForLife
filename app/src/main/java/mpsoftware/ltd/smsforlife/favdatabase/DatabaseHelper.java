@@ -1,4 +1,4 @@
-package mpsoftware.ltd.smsforlife.database;
+package mpsoftware.ltd.smsforlife.favdatabase;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteOpenHelper;
