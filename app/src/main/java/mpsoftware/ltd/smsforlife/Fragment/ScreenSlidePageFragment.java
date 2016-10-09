@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.like.LikeButton;
+
 import mpsoftware.ltd.smsforlife.R;
 
 /**
@@ -19,6 +21,7 @@ public class ScreenSlidePageFragment extends Fragment {
     private TextView mTextFullSMS;
     private TextView mTextPageNumber;
     private TextView mTexViewTotalPage;
+    private LikeButton mLikeButton;
     private String mFullSmS;
     private int mPage;
     private int mTotalCount;
@@ -54,6 +57,7 @@ public class ScreenSlidePageFragment extends Fragment {
          mTextFullSMS = (TextView)view.findViewById(R.id.FullSMS);
          mTextPageNumber = (TextView)view.findViewById(R.id.pagerNumber);
          mTexViewTotalPage = (TextView)view.findViewById(R.id.totalPage);
+         mLikeButton = (LikeButton)view.findViewById(R.id.like_button);
          mTextFullSMS.setText(mFullSmS);
          mTexViewTotalPage.setText(String.valueOf(mTotalCount));
          mTextPageNumber.setText(String.valueOf(mPage+1));
