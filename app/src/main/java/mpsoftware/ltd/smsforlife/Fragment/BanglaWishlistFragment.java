@@ -39,8 +39,8 @@ public class BanglaWishlistFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bangla_wishlist, container, false);
-        mRecyclerViewWishlist = (RecyclerView)view.findViewById(R.id.recylerViewBanglaWishlist);
 
+        mRecyclerViewWishlist = (RecyclerView)view.findViewById(R.id.recylerViewBanglaWishlist);
         mWishlisHandler = new WishlistHandler(getActivity());
         FlipInTopXAnimator animator = new FlipInTopXAnimator();
         animator.setAddDuration(2000);

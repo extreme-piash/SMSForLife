@@ -36,6 +36,7 @@ public class MainContentFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_main_content, container, false);
 
+        getActivity().setTitle("SMS For Life");
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
         mTabLayout = (TabLayout) view.findViewById(R.id.sliding_tabs);
         mTabAdapter = new TabViewPagerAdapter(getChildFragmentManager(),getActivity());

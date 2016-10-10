@@ -42,7 +42,9 @@ public class BanglaSubFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_bangla_sub, container, false);
+
         setStringArrayByPosition();
+        getActivity().setTitle("SMS For Life");
         mRecyclerViewBanglaSub = (RecyclerView)view.findViewById(R.id.recylerViewBanglaSub);
         FloatingActionButton floatingActionButton = ((MainActivity) getActivity()).getFloatingActionButton();
         if (floatingActionButton != null) {

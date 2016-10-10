@@ -52,10 +52,13 @@ public class FullSMSFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_full_sms, container, false);
+
         mPager = (ViewPager)view.findViewById(R.id.viewpagerFullSMS);
         mImageViewForward = (ImageView)view.findViewById(R.id.forwardButton);
         mImageViewBackward = (ImageView)view.findViewById(R.id.backwardButton);
         mImageViewSend = (ImageView)view.findViewById(R.id.sendSMS);
+
+        getActivity().setTitle("SMS For Life");
         FloatingActionButton floatingActionButton = ((MainActivity) getActivity()).getFloatingActionButton();
         if (floatingActionButton != null) {
             floatingActionButton.hide();

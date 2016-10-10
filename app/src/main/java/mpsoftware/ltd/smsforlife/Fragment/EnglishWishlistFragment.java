@@ -37,8 +37,8 @@ public class EnglishWishlistFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_english_wishlist, container, false);
-        mRecyclerViewWishlist = (RecyclerView)view.findViewById(R.id.recylerViewEnglishWishlist);
 
+        mRecyclerViewWishlist = (RecyclerView)view.findViewById(R.id.recylerViewEnglishWishlist);
         mWishlisHandler = new WishlistHandler(getActivity());
         FlipInTopXAnimator animator = new FlipInTopXAnimator();
         animator.setAddDuration(2000);

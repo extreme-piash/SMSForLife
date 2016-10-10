@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,10 +37,10 @@ public class EnglishSMSFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_second, container, false);
+        View view = inflater.inflate(R.layout.fragment_englishsms, container, false);
 
+        getActivity().setTitle("SMS For Life");
         mRecyclerViewBangla = (RecyclerView)view.findViewById(R.id.recylerViewEnglish);
-
         mLayoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerViewBangla.setLayoutManager(mLayoutManager);
         mStringList = Arrays.asList(getResources().getStringArray(R.array.EnglishSMSList));

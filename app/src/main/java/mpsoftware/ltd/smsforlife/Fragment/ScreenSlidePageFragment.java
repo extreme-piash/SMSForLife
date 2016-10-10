@@ -61,6 +61,7 @@ public class ScreenSlidePageFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_screen_slide_page, container, false);
+
          mTextFullSMS = (TextView)view.findViewById(R.id.FullSMS);
          mTextPageNumber = (TextView)view.findViewById(R.id.pagerNumber);
          mTexViewTotalPage = (TextView)view.findViewById(R.id.totalPage);

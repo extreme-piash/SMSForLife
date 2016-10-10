@@ -40,6 +40,7 @@ public class EnglishSubFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_english_sub, container, false);
 
         mRecyclerViewEnglishSub = (RecyclerView)view.findViewById(R.id.recylerViewEnglishSub);
+        getActivity().setTitle("SMS For Life");
         setStringArrayByPosition();
         FloatingActionButton floatingActionButton = ((MainActivity) getActivity()).getFloatingActionButton();
         if (floatingActionButton != null) {
