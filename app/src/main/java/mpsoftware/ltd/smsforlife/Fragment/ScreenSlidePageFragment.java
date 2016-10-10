@@ -10,14 +10,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.like.LikeButton;
+import com.like.OnLikeListener;
 
 import mpsoftware.ltd.smsforlife.R;
+import mpsoftware.ltd.smsforlife.favdatabase.WishlistHandler;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ScreenSlidePageFragment extends Fragment {
 
+    private final String TAG = "Sliding";
     private TextView mTextFullSMS;
     private TextView mTextPageNumber;
     private TextView mTexViewTotalPage;
@@ -25,6 +28,7 @@ public class ScreenSlidePageFragment extends Fragment {
     private String mFullSmS;
     private int mPage;
     private int mTotalCount;
+    private WishlistHandler wishlistHandler;
     public ScreenSlidePageFragment() {
         // Required empty public constructor
     }
@@ -61,6 +65,31 @@ public class ScreenSlidePageFragment extends Fragment {
          mTextFullSMS.setText(mFullSmS);
          mTexViewTotalPage.setText(String.valueOf(mTotalCount));
          mTextPageNumber.setText(String.valueOf(mPage+1));
+         wishlistHandler = new WishlistHandler(getActivity());
+
+        mLikeButton.setOnLikeListener(
+                new OnLikeListener() {
+                    @Override
+                    public void liked(LikeButton likeButton) {
+
+                        if ( wishlistHandler.isFavourite(mFullSmS) < 0 ){
+                            Log.e(TAG, "liked: "+"inserted");
+                            wishlistHandler.insertWishlist(mFullSmS);
+                        }
+
+                    }
+
+                    @Override
+                    public void unLiked(LikeButton likeButton) {
+
+                        if (wishlistHandler.isFavourite(mFullSmS) > 0){
+                            Log.e("yo yo", "unLiked: "+  wishlistHandler.getAllWishlistData());
+                            wishlistHandler.delete(mFullSmS);
+                        }
+                        Log.e("yo yo", "unLiked: "+  wishlistHandler.getAllWishlistData());
+                    }
+                }
+        );
 
         return view;
     }
