@@ -28,17 +28,19 @@ public class ScreenSlidePageFragment extends Fragment {
     private String mFullSmS;
     private int mPage;
     private int mTotalCount;
+    private String mSMSTrack;
     private WishlistHandler wishlistHandler;
     public ScreenSlidePageFragment() {
         // Required empty public constructor
     }
 
-    public static ScreenSlidePageFragment newInstance(int page,int totalCount, String FullSmS) {
+    public static ScreenSlidePageFragment newInstance(int page,int totalCount,String smsTrack, String FullSmS) {
         
         Bundle args = new Bundle();
         args.putInt("pagenumber", page);
         args.putString("fullsms", FullSmS);
         args.putInt("totalCount", totalCount);
+        args.putString("smstrack", smsTrack);
 
         
         ScreenSlidePageFragment fragment = new ScreenSlidePageFragment();
@@ -51,6 +53,7 @@ public class ScreenSlidePageFragment extends Fragment {
         mPage = getArguments().getInt("pagenumber", 0);
         mFullSmS = getArguments().getString("fullsms");
         mTotalCount = getArguments().getInt("totalCount");
+        mSMSTrack = getArguments().getString("smstrack");
     }
 
     @Override
@@ -62,31 +65,43 @@ public class ScreenSlidePageFragment extends Fragment {
          mTextPageNumber = (TextView)view.findViewById(R.id.pagerNumber);
          mTexViewTotalPage = (TextView)view.findViewById(R.id.totalPage);
          mLikeButton = (LikeButton)view.findViewById(R.id.like_button);
+        wishlistHandler = new WishlistHandler(getActivity());
+        if (wishlistHandler.isFavouriteBangla(mFullSmS) > 0){
+            mLikeButton.setLiked(true);
+        }
+        else {
+            mLikeButton.setLiked(false);
+        }
          mTextFullSMS.setText(mFullSmS);
          mTexViewTotalPage.setText(String.valueOf(mTotalCount));
          mTextPageNumber.setText(String.valueOf(mPage+1));
-         wishlistHandler = new WishlistHandler(getActivity());
+
 
         mLikeButton.setOnLikeListener(
                 new OnLikeListener() {
                     @Override
                     public void liked(LikeButton likeButton) {
 
-                        if ( wishlistHandler.isFavourite(mFullSmS) < 0 ){
-                            Log.e(TAG, "liked: "+"inserted");
-                            wishlistHandler.insertWishlist(mFullSmS);
-                        }
 
+                        if ( wishlistHandler.isFavouriteBangla(mFullSmS) < 0 && mSMSTrack.equals("Bangla")){
+                            wishlistHandler.insertWishlistBangla(mFullSmS);
+                            Log.e(TAG, "liked: b "+mSMSTrack );
+                        }else if (wishlistHandler.isFavouriteEnglish(mFullSmS) < 0 && mSMSTrack.equals("English")){
+                            wishlistHandler.insertWishlistEnglish(mFullSmS);
+                            Log.e(TAG, "liked: e"+mSMSTrack );
+                        }
                     }
 
                     @Override
                     public void unLiked(LikeButton likeButton) {
 
-                        if (wishlistHandler.isFavourite(mFullSmS) > 0){
-                            Log.e("yo yo", "unLiked: "+  wishlistHandler.getAllWishlistData());
-                            wishlistHandler.delete(mFullSmS);
+                        if (wishlistHandler.isFavouriteBangla(mFullSmS) > 0 && mSMSTrack.equals("Bangla")){
+                            wishlistHandler.deleteWishlistBangla(mFullSmS);
+                            Log.e(TAG, "unliked: b"+mSMSTrack );
+                        }else if (wishlistHandler.isFavouriteEnglish(mFullSmS) > 0 && mSMSTrack.equals("English")){
+                            wishlistHandler.deleteWishlistEnglish(mFullSmS);
+                            Log.e(TAG, "unliked: e"+mSMSTrack );
                         }
-                        Log.e("yo yo", "unLiked: "+  wishlistHandler.getAllWishlistData());
                     }
                 }
         );

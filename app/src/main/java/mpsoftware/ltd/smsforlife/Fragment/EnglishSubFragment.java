@@ -59,6 +59,7 @@ public class EnglishSubFragment extends Fragment {
                         bundleSMS.putString("fullSMS", mStringList.get(position));
                         bundleSMS.putStringArrayList("smsArray",  mStringList);
                         bundleSMS.putInt("smsPosition", position);
+                        bundleSMS.putString("smstrack","English");
 
                         Fragment fragment = new FullSMSFragment();
                         fragment.setArguments(bundleSMS);

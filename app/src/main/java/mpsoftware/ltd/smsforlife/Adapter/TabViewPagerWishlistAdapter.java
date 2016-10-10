@@ -6,19 +6,20 @@ import android.content.Context;
 import android.support.v13.app.FragmentStatePagerAdapter;
 
 import mpsoftware.ltd.smsforlife.Fragment.BanglaSMSFragment;
+import mpsoftware.ltd.smsforlife.Fragment.BanglaWishlistFragment;
 import mpsoftware.ltd.smsforlife.Fragment.EnglishSMSFragment;
+import mpsoftware.ltd.smsforlife.Fragment.EnglishWishlistFragment;
 
 /**
- * Created by piash on 9/25/16.
+ * Created by piash on 10/11/16.
  */
 
-public class TabViewPagerAdapter extends FragmentStatePagerAdapter {
+public class TabViewPagerWishlistAdapter extends FragmentStatePagerAdapter {
 
-    private Context context;
-
-    public TabViewPagerAdapter(FragmentManager fm, Context context) {
+    private Context mContext;
+    public TabViewPagerWishlistAdapter(FragmentManager fm, Context context) {
         super(fm);
-        this.context = context;
+        this.mContext = context;
     }
 
     @Override
@@ -31,9 +32,9 @@ public class TabViewPagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                return new BanglaSMSFragment();
+                return new BanglaWishlistFragment();
             case 1:
-                return new EnglishSMSFragment();
+                return new EnglishWishlistFragment();
         }
 
         return null;
@@ -49,7 +50,6 @@ public class TabViewPagerAdapter extends FragmentStatePagerAdapter {
                 return "English";
         }
         return null;
-
-
     }
+
 }

@@ -40,6 +40,7 @@ public class FullSMSFragment extends Fragment {
     private ImageView mImageViewBackward;
     private ImageView mImageViewSend;
     private int mCurrentViewPager;
+    private String mSMSTrack;
 
     public FullSMSFragment() {
         // Required empty public constructor
@@ -64,8 +65,10 @@ public class FullSMSFragment extends Fragment {
         mBundleSMS = getArguments();
         mStringArray = mBundleSMS.getStringArrayList("smsArray");
         mCurrentPage = mBundleSMS.getInt("smsPosition");
+        mSMSTrack = mBundleSMS.getString("smstrack");
 
-        mPagerAdapter = new FullSMSViewPagerAdapter(getFragmentManager(), mStringArray, mStringArray.size(), getActivity());
+
+        mPagerAdapter = new FullSMSViewPagerAdapter(getFragmentManager(), mStringArray, mStringArray.size(), mSMSTrack, getActivity());
         mPager.setAdapter(mPagerAdapter);
         mPager.setCurrentItem(mCurrentPage);
 

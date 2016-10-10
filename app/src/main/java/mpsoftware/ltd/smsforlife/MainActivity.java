@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import mpsoftware.ltd.smsforlife.Fragment.MainContentFragment;
+import mpsoftware.ltd.smsforlife.Fragment.WishlistFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
                /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
                 Toast.makeText(getApplicationContext(), "It's okay", Toast.LENGTH_SHORT).show();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.content_main, new WishlistFragment());
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 

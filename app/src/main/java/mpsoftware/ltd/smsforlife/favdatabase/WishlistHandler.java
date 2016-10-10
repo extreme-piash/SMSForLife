@@ -33,33 +33,67 @@ public class WishlistHandler {
         mWishlistContract.close();
     }
 
-    public long insertWishlist(String fullSMS) {
+    public long insertWishlistBangla(String fullSMS) {
         this.open();
         long rowAdded = 1L;
 
         ContentValues cv = new ContentValues();
-        cv.put(WishlistContract.WishlistTableColumns.FULLSMS, fullSMS);
+        cv.put(WishlistContract.WishlistTableColumns.BANGLASMS, fullSMS);
         rowAdded += mDatabase.insert(WishlistContract.WishlistTableColumns.TABLE_NAME, null, cv);
         this.close();
 
         return rowAdded;
     }
 
-    public void delete(String FullSMS) {
+    public long insertWishlistEnglish(String fullSMS) {
         this.open();
-        mDatabase.execSQL("DELETE FROM " + WishlistContract.WishlistTableColumns.TABLE_NAME+ " WHERE "+WishlistContract.WishlistTableColumns.FULLSMS+"='"+FullSMS+"'");
+        long rowAdded = 1L;
+
+        ContentValues cv = new ContentValues();
+        cv.put(WishlistContract.WishlistTableColumns.ENGLISHSMS, fullSMS);
+        rowAdded += mDatabase.insert(WishlistContract.WishlistTableColumns.TABLE_NAME, null, cv);
+        this.close();
+
+        return rowAdded;
+    }
+
+    public void deleteWishlistBangla(String FullSMS) {
+        this.open();
+        mDatabase.execSQL("DELETE FROM " + WishlistContract.WishlistTableColumns.TABLE_NAME+ " WHERE "+WishlistContract.WishlistTableColumns.BANGLASMS+"='"+FullSMS+"'");
         //return mDatabase.delete(WishlistContract.WishlistTableColumns.TABLE_NAME, WishlistContract.WishlistTableColumns.FULLSMS + "=" + FullSMS, null) > 0;
         this.close();
     }
 
-    public ArrayList<String> getAllWishlistData() {
+    public void deleteWishlistEnglish(String FullSMS) {
+        this.open();
+        mDatabase.execSQL("DELETE FROM " + WishlistContract.WishlistTableColumns.TABLE_NAME+ " WHERE "+WishlistContract.WishlistTableColumns.ENGLISHSMS+"='"+FullSMS+"'");
+        //return mDatabase.delete(WishlistContract.WishlistTableColumns.TABLE_NAME, WishlistContract.WishlistTableColumns.FULLSMS + "=" + FullSMS, null) > 0;
+        this.close();
+    }
+
+    public ArrayList<String> getAllWishlistBangla() {
 
         this.open();
         ArrayList<String> contactList = new ArrayList<>();
 
         String[] projection = {
-                WishlistContract.WishlistTableColumns.FULLSMS};
-        Cursor cursor = mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, null, null, null, null, null);
+                WishlistContract.WishlistTableColumns.BANGLASMS};
+        Cursor cursor = mDatabase.rawQuery("SELECT * FROM "+WishlistContract.WishlistTableColumns.TABLE_NAME+" WHERE "+WishlistContract.WishlistTableColumns.BANGLASMS+" NOT NULL", null);//mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, null, null, null, null, null);
+
+        while (cursor.moveToNext()) {
+            contactList.add(cursor.getString(0));
+        }
+        this.close();
+        return contactList;
+    }
+    public ArrayList<String> getAllWishlistEnglish() {
+
+        this.open();
+        ArrayList<String> contactList = new ArrayList<>();
+
+        String[] projection = {
+                WishlistContract.WishlistTableColumns.ENGLISHSMS};
+        Cursor cursor =  mDatabase.rawQuery("SELECT * FROM "+WishlistContract.WishlistTableColumns.TABLE_NAME+" WHERE "+WishlistContract.WishlistTableColumns.ENGLISHSMS+" NOT NULL", null);//mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, null, null, null, null, null);
 
         while (cursor.moveToNext()) {
             contactList.add(cursor.getString(0));
@@ -68,15 +102,15 @@ public class WishlistHandler {
         return contactList;
     }
 
-    public int isFavourite(String fullSMS) {
+    public int isFavouriteBangla(String fullSMS) {
 
         this.open();
         int a = -1;
         String[] projection = {
-                WishlistContract.WishlistTableColumns.FULLSMS};
+                WishlistContract.WishlistTableColumns.BANGLASMS};
         String[] whereValues = {
                 String.valueOf(fullSMS)};
-        Cursor cursor = mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, WishlistContract.WishlistTableColumns.FULLSMS + " = ?", whereValues, null, null, null);
+        Cursor cursor = mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, WishlistContract.WishlistTableColumns.BANGLASMS + " = ?", whereValues, null, null, null);
 
         if (cursor == null) {
             return 0;
@@ -92,6 +126,32 @@ public class WishlistHandler {
 
 
     }
+
+    public int isFavouriteEnglish(String fullSMS) {
+
+        this.open();
+        int a = -1;
+        String[] projection = {
+                WishlistContract.WishlistTableColumns.ENGLISHSMS};
+        String[] whereValues = {
+                String.valueOf(fullSMS)};
+        Cursor cursor = mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, WishlistContract.WishlistTableColumns.ENGLISHSMS + " = ?", whereValues, null, null, null);
+
+        if (cursor == null) {
+            return 0;
+        } else {
+
+            while (cursor.moveToNext()) {
+                if (!cursor.getString(0).isEmpty()){
+                    a = 1;
+                }
+            }
+            return a;
+        }
+
+
+    }
+
 
     public int getAllWishlistDataSize() {
         ArrayList<String> contactList = new ArrayList<>();

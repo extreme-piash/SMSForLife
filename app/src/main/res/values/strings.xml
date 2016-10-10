@@ -237,7 +237,7 @@
         <item>Flirt</item>
         <item>Friday</item>
     </string-array>
-<string-array name="EnglishSMSAngry">
+    <string-array name="EnglishSMSAngry">
     <item>People say everything happens for a reason
 So when I punch you in the face, remember I
 have a reason.</item>
@@ -274,11 +274,11 @@ You can always regain your balance..
 But if your tongue slips,
 You can never recall the words…
 So think before saying anything in anger.</item>
-    <item>Events will take their course, it is no good of being angry at them; he is happiest who wisely turns them to the best account.</item>
+        <item>Events will take their course, it is no good of being angry at them; he is happiest who wisely turns them to the best account.</item>
     <item>Anyone can become angry that is easy
 but to be angry with the right person at the right time, and 4 the right purpose
 and in the right way that is not within everyone’s power &amp; that is not easy.
 </item>
-</string-array>
+    </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

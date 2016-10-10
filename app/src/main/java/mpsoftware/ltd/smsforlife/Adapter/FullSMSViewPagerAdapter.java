@@ -18,17 +18,19 @@ public class FullSMSViewPagerAdapter extends FragmentStatePagerAdapter {
     private List<String > mSMSArrayList;
     private Context mContext;
     private int mTotalCount;
+    private String mSMSTrack;
 
-    public FullSMSViewPagerAdapter(FragmentManager fm, List<String> mSMSArrayList,int totalCount, Context mContext) {
+    public FullSMSViewPagerAdapter(FragmentManager fm, List<String> mSMSArrayList,int totalCount, String smsTrack, Context mContext) {
         super(fm);
         this.mSMSArrayList = mSMSArrayList;
         this.mContext = mContext;
         this.mTotalCount = totalCount;
+        this.mSMSTrack = smsTrack;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return new ScreenSlidePageFragment().newInstance(position, mTotalCount, mSMSArrayList.get(position));
+        return new ScreenSlidePageFragment().newInstance(position, mTotalCount, mSMSTrack, mSMSArrayList.get(position));
     }
 
     @Override

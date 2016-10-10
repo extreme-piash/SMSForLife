@@ -9,8 +9,9 @@ import mpsoftware.ltd.smsforlife.favdatabase.DatabaseHelper;
 public class WishlistContract extends DatabaseHelper {
 
     private static final String SQL_CREATE_ENTRIES =
-            "CREATE TABLE " + WishlistTableColumns.TABLE_NAME + " ( " +
-                    WishlistTableColumns.FULLSMS +  " TEXT" + " );";
+            "CREATE TABLE " + WishlistTableColumns.TABLE_NAME + " ( "
+                    + WishlistTableColumns.BANGLASMS +  " TEXT, "
+                    + WishlistTableColumns.ENGLISHSMS +  " TEXT" +" );";
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + WishlistTableColumns.TABLE_NAME;
@@ -37,6 +38,7 @@ public class WishlistContract extends DatabaseHelper {
 
     public static abstract class WishlistTableColumns implements BaseColumns {
         public static final String TABLE_NAME = "Wishlist";
-        public static final String FULLSMS = "Id";
+        public static final String BANGLASMS = "banglasms";
+        public static final String ENGLISHSMS = "englishsms";
     }
 }
