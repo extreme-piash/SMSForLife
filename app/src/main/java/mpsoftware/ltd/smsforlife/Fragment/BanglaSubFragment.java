@@ -31,6 +31,7 @@ public class BanglaSubFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<String> mStringList;
     private SmsDataAdapter mSmsAdapter;
+    private String mSMSTitle;
 
     public BanglaSubFragment() {
         // Required empty public constructor
@@ -44,7 +45,6 @@ public class BanglaSubFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_bangla_sub, container, false);
 
         setStringArrayByPosition();
-        getActivity().setTitle("SMS For Life");
         mRecyclerViewBanglaSub = (RecyclerView)view.findViewById(R.id.recylerViewBanglaSub);
         FloatingActionButton floatingActionButton = ((MainActivity) getActivity()).getFloatingActionButton();
         if (floatingActionButton != null) {
@@ -63,7 +63,9 @@ public class BanglaSubFragment extends Fragment {
                 bundleSMS.putString("fullSMS", mStringList.get(position));
                 bundleSMS.putStringArrayList("smsArray",  mStringList);
                 bundleSMS.putInt("smsPosition", position);
-                bundleSMS.putString("smstrack","Bangla");
+                bundleSMS.putString("smstitle", mSMSTitle);
+                bundleSMS.putString("smstrack", "Bangla");
+
 
                 Fragment fragment = new FullSMSFragment();
                 fragment.setArguments(bundleSMS);
@@ -72,12 +74,6 @@ public class BanglaSubFragment extends Fragment {
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
-               /* String shareBody = mStringList.get(position);
-                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-                startActivity(Intent.createChooser(sharingIntent, "Share using"));*/
             }
         });
     return view;
@@ -87,7 +83,10 @@ public class BanglaSubFragment extends Fragment {
     public void setStringArrayByPosition(){
         Bundle bundleSMSPositon = new Bundle();
         bundleSMSPositon = getArguments();
+        mSMSTitle =bundleSMSPositon.getString("smstitle");
+        getActivity().setTitle(mSMSTitle);
         int position = bundleSMSPositon.getInt("position");
+
         switch (position){
             case 0:
                 mStringList =new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok)));

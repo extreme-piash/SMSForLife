@@ -58,7 +58,7 @@ public class FullSMSFragment extends Fragment {
         mImageViewBackward = (ImageView)view.findViewById(R.id.backwardButton);
         mImageViewSend = (ImageView)view.findViewById(R.id.sendSMS);
 
-        getActivity().setTitle("SMS For Life");
+
         FloatingActionButton floatingActionButton = ((MainActivity) getActivity()).getFloatingActionButton();
         if (floatingActionButton != null) {
             floatingActionButton.hide();
@@ -66,6 +66,7 @@ public class FullSMSFragment extends Fragment {
         mStringArray = new ArrayList<>();
         mBundleSMS = new Bundle();
         mBundleSMS = getArguments();
+        getActivity().setTitle(mBundleSMS.getString("smstitle"));
         mStringArray = mBundleSMS.getStringArrayList("smsArray");
         mCurrentPage = mBundleSMS.getInt("smsPosition");
         mSMSTrack = mBundleSMS.getString("smstrack");

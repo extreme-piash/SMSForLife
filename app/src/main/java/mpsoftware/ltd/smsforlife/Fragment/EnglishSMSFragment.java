@@ -39,7 +39,6 @@ public class EnglishSMSFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_englishsms, container, false);
 
-        getActivity().setTitle("SMS For Life");
         mRecyclerViewBangla = (RecyclerView)view.findViewById(R.id.recylerViewEnglish);
         mLayoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerViewBangla.setLayoutManager(mLayoutManager);
@@ -53,6 +52,7 @@ public class EnglishSMSFragment extends Fragment {
 
                 Bundle bundleSMSTopic = new Bundle();
                 bundleSMSTopic.putInt("position",position);
+                bundleSMSTopic.putString("smstitle",mStringList.get(position));
                 Fragment fragment = new EnglishSubFragment();
                 fragment.setArguments(bundleSMSTopic);
                 FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();

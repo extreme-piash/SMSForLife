@@ -48,7 +48,6 @@ public class BanglaSMSFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_banglasms, container, false);
 
         mRecyclerViewBangla = (RecyclerView)view.findViewById(R.id.recylerViewBangla);
-        getActivity().setTitle("SMS For Life");
         FloatingActionButton floatingActionButton = ((MainActivity) getActivity()).getFloatingActionButton();
         if (floatingActionButton != null) {
             floatingActionButton.show();
@@ -69,7 +68,8 @@ public class BanglaSMSFragment extends Fragment {
             public void onItemClick(int position, View v) {
 
                 Bundle bundleSMSTopic = new Bundle();
-                bundleSMSTopic.putInt("position",position);
+                bundleSMSTopic.putInt("position", position);
+                bundleSMSTopic.putString("smstitle", mStringList.get(position));
                 Fragment fragment = new BanglaSubFragment();
                 fragment.setArguments(bundleSMSTopic);
                 FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();

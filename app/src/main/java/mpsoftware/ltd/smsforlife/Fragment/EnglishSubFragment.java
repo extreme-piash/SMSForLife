@@ -28,6 +28,7 @@ public class EnglishSubFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<String> mStringList;
     private SmsDataAdapter mSmsAdapter;
+    private String mSMSTitle;
     public EnglishSubFragment() {
         // Required empty public constructor
     }
@@ -60,7 +61,8 @@ public class EnglishSubFragment extends Fragment {
                         bundleSMS.putString("fullSMS", mStringList.get(position));
                         bundleSMS.putStringArrayList("smsArray",  mStringList);
                         bundleSMS.putInt("smsPosition", position);
-                        bundleSMS.putString("smstrack","English");
+                        bundleSMS.putString("smstitle", mSMSTitle);
+                        bundleSMS.putString("smstrack", "English");
 
                         Fragment fragment = new FullSMSFragment();
                         fragment.setArguments(bundleSMS);
@@ -76,6 +78,8 @@ public class EnglishSubFragment extends Fragment {
     public void setStringArrayByPosition(){
         Bundle bundleSMSPositon = new Bundle();
         bundleSMSPositon = getArguments();
+        mSMSTitle =bundleSMSPositon.getString("smstitle");
+        getActivity().setTitle(mSMSTitle);
         int position = bundleSMSPositon.getInt("position");
         switch (position){
             case 0:
