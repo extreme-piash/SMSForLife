@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="mpsoftware.ltd.smsforlife.MainActivity">
     <item
+        android:id="@+id/action_wishlist"
+        android:orderInCategory="100"
+        android:title="@string/action_wishlist"
+        android:icon="@drawable/blueheart"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
@@ -11,5 +17,10 @@
         android:id="@+id/action_rateus"
         android:orderInCategory="100"
         android:title="@string/action_rateus"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about_me"
+        android:orderInCategory="100"
+        android:title="@string/action_about_me"
         app:showAsAction="never" />
 </menu>

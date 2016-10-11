@@ -92,6 +92,19 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }else if (id == R.id.action_rateus) {
+            return true;
+        }else if (id == R.id.action_about_me) {
+            Toast.makeText(getApplicationContext(),"About me",Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        else if (id == R.id.action_wishlist) {
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.content_main, new WishlistFragment());
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

@@ -86,10 +86,9 @@ public class ScreenSlidePageFragment extends Fragment {
 
                         if ( wishlistHandler.isFavouriteBangla(mFullSmS) < 0 && mSMSTrack.equals("Bangla")){
                             wishlistHandler.insertWishlistBangla(mFullSmS);
-                            Log.e(TAG, "liked: b "+mSMSTrack );
+
                         }else if (wishlistHandler.isFavouriteEnglish(mFullSmS) < 0 && mSMSTrack.equals("English")){
                             wishlistHandler.insertWishlistEnglish(mFullSmS);
-                            Log.e(TAG, "liked: e"+mSMSTrack );
                         }
                     }
 
@@ -98,10 +97,10 @@ public class ScreenSlidePageFragment extends Fragment {
 
                         if (wishlistHandler.isFavouriteBangla(mFullSmS) > 0 && mSMSTrack.equals("Bangla")){
                             wishlistHandler.deleteWishlistBangla(mFullSmS);
-                            Log.e(TAG, "unliked: b"+mSMSTrack );
+
                         }else if (wishlistHandler.isFavouriteEnglish(mFullSmS) > 0 && mSMSTrack.equals("English")){
                             wishlistHandler.deleteWishlistEnglish(mFullSmS);
-                            Log.e(TAG, "unliked: e"+mSMSTrack );
+
                         }
                     }
                 }

@@ -97,7 +97,6 @@ public class WishlistHandler {
             contactList.add(cursor.getString(0));
         }
         this.close();
-        Log.e(TAG, "getAllWishlistEnglish: "+contactList.toString() );
         return contactList;
     }
 
