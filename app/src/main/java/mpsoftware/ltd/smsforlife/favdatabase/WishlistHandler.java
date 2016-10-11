@@ -78,8 +78,6 @@ public class WishlistHandler {
         this.open();
         ArrayList<String> contactList = new ArrayList<>();
 
-        String[] projection = {
-                WishlistContract.WishlistTableColumns.BANGLASMS};
         Cursor cursor = mDatabase.rawQuery("SELECT "+WishlistContract.WishlistTableColumns.BANGLASMS+" FROM "+WishlistContract.WishlistTableColumns.TABLE_NAME+" WHERE "+WishlistContract.WishlistTableColumns.BANGLASMS+" IS NOT NULL", null);//mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, null, null, null, null, null);
 
         while (cursor.moveToNext()) {
@@ -93,8 +91,6 @@ public class WishlistHandler {
         this.open();
         ArrayList<String> contactList = new ArrayList<>();
 
-        String[] projection = {
-                WishlistContract.WishlistTableColumns.ENGLISHSMS};
         Cursor cursor =  mDatabase.rawQuery("SELECT "+WishlistContract.WishlistTableColumns.ENGLISHSMS+" FROM "+WishlistContract.WishlistTableColumns.TABLE_NAME+" WHERE "+WishlistContract.WishlistTableColumns.ENGLISHSMS+" IS NOT NULL", null);//mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, null, null, null, null, null);
 
         while (cursor.moveToNext()) {
