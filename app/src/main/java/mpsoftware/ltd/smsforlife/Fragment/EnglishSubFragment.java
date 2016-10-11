@@ -88,6 +88,9 @@ public class EnglishSubFragment extends Fragment {
             case 1:
                 mStringList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.EnglishSMSAniversary)));
                 break;
+            case 2:
+                mStringList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.EnglishSMSAprilFool)));
+                break;
             default:
                 mStringList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok)));
                 break;
