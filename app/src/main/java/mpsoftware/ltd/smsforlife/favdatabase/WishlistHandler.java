@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,6 +37,7 @@ public class WishlistHandler {
     public long insertWishlistBangla(String fullSMS) {
         this.open();
         long rowAdded = 1L;
+
 
         ContentValues cv = new ContentValues();
         cv.put(WishlistContract.WishlistTableColumns.BANGLASMS, fullSMS);
@@ -78,7 +80,7 @@ public class WishlistHandler {
 
         String[] projection = {
                 WishlistContract.WishlistTableColumns.BANGLASMS};
-        Cursor cursor = mDatabase.rawQuery("SELECT * FROM "+WishlistContract.WishlistTableColumns.TABLE_NAME+" WHERE "+WishlistContract.WishlistTableColumns.BANGLASMS+" NOT NULL", null);//mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, null, null, null, null, null);
+        Cursor cursor = mDatabase.rawQuery("SELECT "+WishlistContract.WishlistTableColumns.BANGLASMS+" FROM "+WishlistContract.WishlistTableColumns.TABLE_NAME+" WHERE "+WishlistContract.WishlistTableColumns.BANGLASMS+" IS NOT NULL", null);//mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, null, null, null, null, null);
 
         while (cursor.moveToNext()) {
             contactList.add(cursor.getString(0));
@@ -93,12 +95,13 @@ public class WishlistHandler {
 
         String[] projection = {
                 WishlistContract.WishlistTableColumns.ENGLISHSMS};
-        Cursor cursor =  mDatabase.rawQuery("SELECT * FROM "+WishlistContract.WishlistTableColumns.TABLE_NAME+" WHERE "+WishlistContract.WishlistTableColumns.ENGLISHSMS+" NOT NULL", null);//mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, null, null, null, null, null);
+        Cursor cursor =  mDatabase.rawQuery("SELECT "+WishlistContract.WishlistTableColumns.ENGLISHSMS+" FROM "+WishlistContract.WishlistTableColumns.TABLE_NAME+" WHERE "+WishlistContract.WishlistTableColumns.ENGLISHSMS+" IS NOT NULL", null);//mDatabase.query(WishlistContract.WishlistTableColumns.TABLE_NAME, projection, null, null, null, null, null);
 
         while (cursor.moveToNext()) {
             contactList.add(cursor.getString(0));
         }
         this.close();
+        Log.e(TAG, "getAllWishlistEnglish: "+contactList.toString() );
         return contactList;
     }
 

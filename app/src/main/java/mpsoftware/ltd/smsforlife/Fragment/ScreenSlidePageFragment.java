@@ -67,7 +67,7 @@ public class ScreenSlidePageFragment extends Fragment {
          mTexViewTotalPage = (TextView)view.findViewById(R.id.totalPage);
          mLikeButton = (LikeButton)view.findViewById(R.id.like_button);
         wishlistHandler = new WishlistHandler(getActivity());
-        if (wishlistHandler.isFavouriteBangla(mFullSmS) > 0){
+        if (wishlistHandler.isFavouriteBangla(mFullSmS) > 0 || wishlistHandler.isFavouriteEnglish(mFullSmS) > 0){
             mLikeButton.setLiked(true);
         }
         else {

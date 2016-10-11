@@ -38,7 +38,7 @@ public class WishlistContract extends DatabaseHelper {
 
     public static abstract class WishlistTableColumns implements BaseColumns {
         public static final String TABLE_NAME = "Wishlist";
-        public static final String BANGLASMS = "banglasms";
-        public static final String ENGLISHSMS = "englishsms";
+        public static final String BANGLASMS = "Banglasms";
+        public static final String ENGLISHSMS = "Englishsms";
     }
 }

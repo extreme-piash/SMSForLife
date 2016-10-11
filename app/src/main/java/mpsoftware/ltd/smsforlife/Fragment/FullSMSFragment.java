@@ -30,6 +30,7 @@ import mpsoftware.ltd.smsforlife.R;
  */
 public class FullSMSFragment extends Fragment {
 
+    public final String TAG ="FullSMS";
 
     private ViewPager mPager;
     private FullSMSViewPagerAdapter mPagerAdapter;
@@ -71,6 +72,7 @@ public class FullSMSFragment extends Fragment {
         mCurrentPage = mBundleSMS.getInt("smsPosition");
         mSMSTrack = mBundleSMS.getString("smstrack");
 
+        Log.e(TAG, "onCreateView: "+mSMSTrack);
 
         mPagerAdapter = new FullSMSViewPagerAdapter(getFragmentManager(), mStringArray, mStringArray.size(), mSMSTrack, getActivity());
         mPager.setAdapter(mPagerAdapter);
