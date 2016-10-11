@@ -11,6 +11,7 @@
         android:layout_gravity="center"
         card_view:cardBackgroundColor="#00000000"
         app:cardElevation="0dp"
+        app:cardUseCompatPadding="true"
         app:dsb_indicatorElevation="0dp"
         android:layout_margin="5dp"
         android:elevation="2dp">

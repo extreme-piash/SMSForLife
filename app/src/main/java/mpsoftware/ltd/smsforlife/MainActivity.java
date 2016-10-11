@@ -1,8 +1,11 @@
 package mpsoftware.ltd.smsforlife;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -90,12 +93,17 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }else if (id == R.id.action_rateus) {
+        if (id == R.id.action_rateus) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getApplicationContext().getPackageName())));
             return true;
         }else if (id == R.id.action_about_me) {
-            Toast.makeText(getApplicationContext(),"About me",Toast.LENGTH_SHORT).show();
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setTitle("About Me");
+            alert.setIcon(R.drawable.sms);
+            String name = "I'm Mehedi Hassan Piash, \nworking as a Software Engineer in android development. \nContact info : 01812353930" +
+                    "\nEmail : piash599@gmail.com";
+            alert.setMessage(name);
+            alert.show();
             return true;
         }
         else if (id == R.id.action_wishlist) {
