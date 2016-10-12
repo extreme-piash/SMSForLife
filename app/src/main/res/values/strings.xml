@@ -202,18 +202,38 @@
 পৃথিবীর একটি শ্রেষ্ঠ প্রেমের কবিতা হতে পারতো!
         </item>
     </string-array>
+    <string-array name="BanglaSMSKosto">
+        <item>নিরবে ভিজে যায় চোখের পাতা,কষ্টের আঘাতে বেড়ে যায় বুকের ব্যথা,
+            জানিনা এই ভাবে কাটাতে হবে কতদিন,আমার এই জীবনে কি আসবে না সূখের দিন</item>
+        <item>কিছু কিছু কথা আছে বলতে পারিনা"এমন কিছু কষ্ট আছে সইতে পারিনা.
+            এমন কিছু ফুল আছে তুলতে পারিনা.আর এমন1ta মনের মানুষ আছে ভূলতে পারিনা</item>
+        <item>এক বিন্দু জল যদি চোখ দিয়ে পড়ে,, সেই জলের ফোটা সুধু তোমার কথা বলে..
+            মনের কথা বুঝনা তুমি মুখে বলি তাই,, শত আঘাতের পরেও তোমায় ভালবেসে যাই..!!</item>
+        <item>মানুষ জীবনে ৬ বার হেরে যায়।(1)টাকার কাছে।
+            (2)ভালবাসার কাছে।
+            (3)সময়ের কাছে।
+            (4)বিবেকের কাছে।
+            (5)বন্ধুত্বের কাছে।
+            (6)অবশেষে মরণের কাছে।</item>
+        <item>কাঁদবে কি তখন ? চির নিদ্রায় ঘুমাবো যখন..
+            মনে রাখবে কি তখন ? না ফেরার দেশে চলে যাবো যখন.. ।
+            ডাকবে কি তখন ?? তোমার ডাকে সাড়া দিবনা যখন..।</item>
+        <item>কিছু কথা ভাবতে ভাবতে চোখে এল জল,
+            জলকে বলিলাম তুই হঠাৎ কেন বাইরে এলি বল?জল বললো চোখটি তোমার সুখের নীড়,
+            কি করে সইবো বলো এত দুঃখের ভীড়।</item>
+        <item>অন্ধ ভালবাসার গন্ধ বেশি, নকল ভালবাসার সুবাস বেশি,
+            সত্য প্রেমে রাগারাগি»নকল প্রেমে হাসাহাসি, বুঝবে যেদিন খুজবে তাকে অবহেলা হারালে যাকে।</item>
+        <item>আমার যদি একটা পৃথিবী থাকত তাহলে সেখানে যেয়ে চিৎকার করে কাঁদতাম, কেন যানো?
+            তুমার দেওয়া স্মৃতি এত যন্রনা দেয় আমাকে যা সহিবার মত শক্তিআমার মাঝে নেই।</item>
+        <item>সপ্ন ভরা জীবনে দুঃখ যখন আসে,
+            সবাই তখন পর হয়ে যায় থাকেনা আর পাশে।কষ্ট যখন মনের মাঝে দিয়ে যায় ব্যথা, সবাই তখন ভুলে যায় সম্পর্কের কথা।</item>
+        <item>আসবি তুই কবে ? পাগলি তুই ফিরে।যদি কখনো আসিস ফিরে, রাখব তোকে অনেক সুখে। তুই সুখে থাকবি, আর আমায় ভালোবাসবি।পাগলি_তুই_ফিরে_আয়।</item>
+    </string-array>
     <string-array name="EnglishSMSList">
         <item>Angry</item>
         <item>Anniversary</item>
         <item>April Fool</item>
-        <item>ASCII SMS</item>
-        <item>Attitude</item>
-        <item>Bible</item>
         <item>Birthday</item>
-        <item>Boss Birthday</item>
-        <item>Boy VS Girl</item>
-        <item>Boyfriend Birthday</item>
-        <item>Boyfriend Love</item>
         <item>Breakup SMS</item>
         <item>Broken Heart</item>
         <item>Brother SMS</item>
@@ -407,7 +427,229 @@ Fact2: After reading this,
 4 ) attitude,
 kick them off.
 How dare they fool u before april 1st.</item>
-
         </string-array>
+    <string-array name="EnglishSMSBirthday">
+        <item>Cos today is your day,
+its an opportunity for u to know that
+u are special and special things are for u today,
+i wish u all the best.
+Happy birth day. Love u!</item>
+        <item>my plane was crashed but i m ok,
+my car was stolen yesterday,
+i missed the bus,&amp;
+my mobile\'s battry was also verylow,
+thats y i can\'t get u yesterday,
+plz 4giv me &amp; HAPPY BLATED B\'DAY 2 U</item>
+        <item>You were crying when u were born
+while evrybody was laughing there
+As u live 2 blow a thousand candles,
+live ur life humbly so that
+u would b the one laughing when u die
+and everybody else would be crying.
+Happy Birthday :)</item>
+        <item>Fantastic Answer by a philosopher
+to a question asked at the BBC.
+Define Birthday!
+
+Answer: The only day in your life,
+when you cried &amp; your mother was Smiling..!</item>
+        <item>2 Stars3 Stars4 Stars5 Stars (304 votes, average: 3.48 out of 5)
+I am dancing and singing on your birthday!
+Only that you cant see me!!
+
+Happy birthday
+
+Wish I was celebrating with you.</item>
+        <item>I may not be by your side..
+Celebrating your special day with you..
+But i want you to know
+that i am thinking of you
+&amp; wishing you
+a wonderful birthday !</item>
+        <item>On your birthday,
+I would like to give you
+some words of wisdom
+.
+.
+.
+.
+.
+.
+.
+Smile while you still have teeth.
+:D
+Many many happy returns of the day</item>
+        <item>Fresh air... fresh idea...
+fresh talent... fresh energy...
+i wish u to have a...
+special sunday..
+marvellous monday...
+tasty tuesday...
+wonderful wednesday...
+thankful thursday...
+friendly friday...
+successful saturday...
+*have a great week ahead*
+and
+HAPPY BIRTH DAY TO YOU</item>
+        <item>May you have all the joy your heart can hold,
+All the smiles a day can bring,
+
+All the blessings a life can unfold,
+May you have Gods best in everything.
+
+Wishing u a Happy Birthday</item>
+        <item>I\'m so blessed 2 have a friend like u
+this comes with many loving
+thoughts &amp; warm wishes
+i send 2 u, may ur day be filled
+with laughter, on this special day
+may the finest things in life
+always come ur way happy birthday</item>
+        <item>Wish you a very happy birthday
+May life lead you 2 great happiness
+success and hope dat
+all your wishes comes true!
+enjoy your day.</item>
+    </string-array>
+    <string-array name="EnglishSMSBreakup">
+        <item>Why did i break up with her?
+Well, it\'s like i sat down and
+looked at the situation,
+all the pieces lying on the floor.
+It just wasn\'t a puzzle anymore.
+None of the pieces fit together,
+and even if i tried really hard,
+the pieces, well, they were just
+two different puzzles.
+That\'s why i did it.
+She needs to understand that.</item>
+        <item>Style of break up:
+Boy bought gift for His Girl friend-
+GF:Wat the hell would I do with this rocket?
+Boy: U wanted stars na?
+Now sit on it and GET LOST:p</item>
+        <item>\"COMPROMISING\" doesn\'t mean that
+your are wrong and someone is right,
+it only means that
+you value your \"RELATIONSHIP\"
+much more then your \"EGO\"</item>
+        <item>I know u think u broke my heart
+but I knew your game right from the start
+I saw your game and played it 2
+so look here I play the jokes on u!</item>
+        <item>One Of The Best Quote,
+
+Always have a
+
+BACKUP
+
+BEFORE
+
+BREAKUP! :p</item>
+        <item>I Will Wait ..
+
+Till The Day
+\"I\" Can Forget \"You\" ..
+
+Or
+
+The Day
+You Realize
+\"You\" Cannot Forget \"Me\" .</item>
+        <item>A man may or may not be happy when he/she win\'s one\'s mind.
+But he must be happy when win\'s one\'s trust.
+Trust is the zenith of all relation.</item>
+        <item>I need to make myself busy
+so I can forget
+that
+I\'m deeply hurt and broke.</item>
+        <item>I guess that I\'m da loser
+Cause u hav found some1 new
+But I\'m still here, still all alone
+Just crying over u</item>
+        <item>Most hurting Line by a true Love:
+If U will leave me,
+I prOmise U will cOme back Once
+with ur OPEN EYES to see my CLOSED EYES..!!</item>
+        <item>BREAKUPS Aren\'t Always
+Meant To Make Up,
+Sometimes They Happen To
+Give You A Chance To WAKE UP</item>
+        <item>ometime giving someone second chance
+is giving them an extra bullet for the gun
+because they missed you the first time.</item>
+    </string-array>
+    <string-array name="EnglishSMSBrokenHeart">
+        <item>For those who have been cheated and got their heart broken,
+            we have compiled Broken Heart SMS Collection,
+            Broken heart messages and broken heart text.
+            If you have poetic taste you may be interested in broken heart quotes,
+            broken heart poems and broken heart poetry.</item>
+        <item>Some people hurt by words &amp; some by action...
+But the biggest hurt i believe is
+that someone ignoring u
+when u value them bigger than anything else!</item>
+        <item>We Dont Succeed In Our 1st Love!
+Becoz We Lack Certain Qualites.
+But
+After Achieving Those Qualities,
+We Never Love Again!</item>
+        <item>Each drop of a Tear is Costly
+than anything in World..
+But,
+No One knows its value
+until they have it in their own eyes
+For Someone.</item>
+        <item>Avoiding something doesn\'t always
+mean that u hate it..
+
+It could also mean that u want it,
+but u just know that it isn\'t urs.. :(</item>
+        <item>I want to forget all the times
+when we were together,
+Bot because I doesn\'t love her,
+Because it hurts too much to remember... :(</item>
+        <item>Some broken heart, may never mend,
+Some memories may never end,
+
+Some wet tears may never dry,
+But my love for you will never die...</item>
+        <item>If The Person U Love Doesn\'t Love U Back
+Just Imagine That U Are The Letter \'E\'
+In The Word L O V E -
+You Are There But Never Pronounced. :(</item>
+        <item>Even though,
+she hates me in every movement of life ,
+but i love her with very seconds,
+not because she has broken my heart,
+but she as thought me to live with broken heart,</item>
+        <item>Its Not When I Look Back,
+At All The Memories &amp;
+Good Times We Had,
+Makes Me Sad,
+Its When U Consider Those,
+Memories As Nothing To you,
+When They Meant,
+Everything To Me.</item>
+        <item>The most beautiful words
+by a wounded heart
+\"I Never Stopped Loving You,
+I Just Stopped Showing It\"...</item>
+        <item>I knew I matured
+when I realized every situation doesn\'t need a reaction.
+Sometimes you just gotta leave people
+to do the lame shit they do.</item>
+        <item>Sometimes,
+Someone Has To Hurt You
+Deep Enough
+To Make You Realize
+How Better Your Life
+Is Without Them In It. . . !!!</item>
+        <item>Love is like two people holding a rubber band,
+we pull,
+then when one person let\’s go,
+it\’s The Person Who Held On That Gets Hurt!!!!</item>
+    </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

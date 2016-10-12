@@ -94,6 +94,12 @@ public class BanglaSubFragment extends Fragment {
             case 1:
                 mStringList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSAdvice)));
                 break;
+            case 2:
+                mStringList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSPoem)));
+                break;
+            case 3:
+                mStringList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSKosto)));
+                break;
             default:
                 mStringList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.BanglaSMSEidMubarok)));
                 break;
